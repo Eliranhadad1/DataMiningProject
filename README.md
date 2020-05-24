@@ -1,1 +1,1 @@
-# DataMiningProject
+# Data Mining Project - Covid 19

@@ -1,7 +1,7 @@
 
 
-def myNgrams(file_hiv):
-   
+def myNgrams(file_name):
+   file_hiv = open(file_name, "r")
    ngrams_size = 4
    ngrams = {}
     
@@ -16,17 +16,12 @@ def myNgrams(file_hiv):
      ngrams[getFromFile].append(file_hiv.tell())
      if len(getFromFile) < ngrams_size:
          break
-     
+   file_hiv.close()
    return ngrams
     
 
-file_hiv = open("hiv.fasta", "r")
-file_sc = open("sc.fasta", "r")
+ngrams_hiv = myNgrams("hiv.fasta")
+ngrams_sc = myNgrams("sc.fasta")
 
-ngrams_hiv = myNgrams(file_hiv)
-ngrams_sc = myNgrams(file_sc)
-
-file_hiv.close()
-file_sc.close()
 
 

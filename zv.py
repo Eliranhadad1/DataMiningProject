@@ -1,10 +1,11 @@
 
 from scipy.stats import spearmanr
 def zv(Di,deltaT):
-    T=deltaT.size()
+    T=len(deltaT)
     sigma=0;
     for Dj in deltaT:
-        sigma+=spearmanr(Di,Dj)
+        [c,p]=spearmanr(Di,Dj)
+        sigma+=c
     return (1/ T)*sigma
 
 
